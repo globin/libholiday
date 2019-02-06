@@ -21,7 +21,9 @@ class Berlin extends Germany
         $timezone = $this->timezone;
 
         $data   = parent::getHolidays($year);
-        $data[] = new Holiday("8.3." . $year, "Frauentag", $timezone);
+        if ($year > 2018) {
+            $data[] = new Holiday("8.3." . $year, "Frauentag", $timezone);
+        }
 
         return $data;
     }
